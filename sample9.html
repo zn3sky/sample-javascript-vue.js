@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<meta http-equiv="Content-Script-Type" content="text/javascript">
+<meta name="keywords" content="vue.js">
+<meta name="description" content="vue.js sample">
+<script src="https://unpkg.com/vue"></script>
+
+<title>vue.js sample</title>
+
+</head>
+<body>
+<div id="example-2">
+  <button v-on:click="greet">Greet</button>
+</div>
+<script type="text/javascript">
+var example2 = new Vue({
+  el: '#example-2',
+  data: {
+    name: 'Vue.js'
+  },
+
+  methods: {
+    greet: function (event) {
+      alert('Hello ' + this.name + '!')
+      if (event) {
+        alert(event.target.tagName)
+      }
+    }
+  }
+})
+
+example2.greet();
+</script> 
+</body>
+</html>
